@@ -1,26 +1,32 @@
-import * as paper from '../scripts/paper-full';
+import * as paper from 'paper';
+
 import {Point} from './Point';
 
-enum MapDirection {
+export enum MapDirection {
     vertical,
     horizontal
 }
 
-enum MapEdge {
+export enum MapEdgeType {
 
 }
 
-interface MapParameter {
+export interface MapParameter {
     size: {
         width: number,
         height: number,
     };
     gridSpacing: number;
     direction: MapDirection;
-    edge: MapEdge;
+    edge: MapEdgeType;
 }
 
-class MapGenerator {
+export interface GridCode {
+    x: number;
+    y: number;
+}
+
+export class MapGenerator {
 
     parameter: MapParameter;
 
@@ -35,7 +41,3 @@ class MapGenerator {
 
 }
 
-export {
-    MapGenerator,
-    MapParameter
-};

@@ -2,6 +2,7 @@
     "compileOnSave": true,
     "compilerOptions": {
         "alwaysStrict": true,
+        "allowJs": true,
         "charset": "utf8",
         "importHelpers": true,
         "locale": "zh-CN",
@@ -15,7 +16,8 @@
         "pretty": true,
         "removeComments": false,
         "sourceMap": true,
-        "target": "es2018"
+        "target": "es2018",
+        "typeRoots": ["typings"]
     },
     "include": [
         "src"

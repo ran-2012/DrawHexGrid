@@ -1,10 +1,11 @@
 {
     "name": "drawhexgrid",
     "version": "0.1.0",
-    "description": "null",
-    "main": "index.js",
+    "description": "A simple hex grid painter",
+    "main": "index.html",
     "scripts": {
-        "build": "tsc"
+        "build": "webpack",
+        "release": "echo \"not implemented.\""
     },
     "repository": {
         "type": "git",
@@ -16,6 +17,13 @@
     "author": "ran",
     "license": "MIT",
     "dependencies": {
+        "jquery": "^3.5.1",
+        "paper": "0.12.11",
         "typescript": "^3.9.7"
+    },
+    "devDependencies": {
+        "ts-loader": "^8.0.2",
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.12"
     }
 }
