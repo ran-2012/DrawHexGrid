@@ -1,9 +1,7 @@
 import * as paper from 'paper';
-import * as $ from 'jquery';
 
-import {MapGenerator} from './MapGenerator';
+import {GridGenerator, MapDirection} from './GridGenerator';
 import {GridPainter} from './GridPainter';
-import {Grid} from './Grid';
 
 console.log('Loading...');
 
@@ -16,12 +14,28 @@ window.onload = function () {
 function initContext() {
     paper.setup('drawArea');
 
-    const path = new paper.Path();
-    path.strokeColor = new paper.Color('black');
-    path.strokeWidth = 2;
+    const mapGenerator = new GridGenerator({
+        startPoint: {
+            x: 50,
+            y: 50,
+        },
+        width: 12,
+        height: 12,
 
-    path.moveTo(new paper.Point(0, 0));
-    path.lineTo(new paper.Point(100, 200));
+        gridSize: 50,
+        direction: MapDirection.horizontal
+    });
+
+    const grids = mapGenerator.generate();
+
+    const painter = new GridPainter({
+        lineWidth: 2,
+        lineColor: new paper.Color('gray'),
+    });
+
+    grids.map((grid) => {
+        painter.draw(grid.pos, grid.size, grid.rotate);
+    });
 
     // @ts-ignore
     paper.view.draw();

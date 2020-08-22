@@ -1,4 +1,4 @@
-import {GridCode} from './MapGenerator';
+import {GridCode} from './GeneralTypes';
 
 export class GridNameBase {
 
@@ -14,7 +14,7 @@ export class GridNameBase {
      *
      * @param {GridCode} code
      */
-    public static genGridName(code: GridCode): string {
+    public genGridName(code: GridCode): string {
 
         // sample:
         // 1 -> "01"
